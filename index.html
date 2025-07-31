@@ -17,25 +17,40 @@
       color: #333;
     }
 
-    header {
-      background-image: url('header.jpg');
-      background-size: cover;
-      background-position: center;
+    /* Header video style */
+    .hero-section {
+      position: relative;
       height: 60vh;
+      overflow: hidden;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
-      color: white;
+      justify-content: center;
       text-align: center;
+    }
+
+    .bg-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      opacity: 0.85;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: white;
       padding: 1rem;
     }
 
-    header h1 {
+    .hero-content h1 {
       font-size: 1.5rem;
     }
 
-    header p {
+    .hero-content p {
       font-size: 1rem;
       max-width: 90%;
     }
@@ -73,11 +88,11 @@
     }
 
     @media (min-width: 768px) {
-      header h1 {
+      .hero-content h1 {
         font-size: 2rem;
       }
 
-      header p {
+      .hero-content p {
         font-size: 1.1rem;
       }
 
@@ -89,10 +104,16 @@
 </head>
 <body>
 
-  <header>
-    <h1>Selamat Datang di Kavling Impian Anda</h1>
-    <p>Nikmati lingkungan asri, tenang, dan nyaman di tepi danau bersama keluarga tercinta.</p>
-    <a href="kavling.html" class="btn">Lihat Kavling</a>
+  <header class="hero-section">
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="background.mp4" type="video/mp4">
+      Browser Anda tidak mendukung video HTML5.
+    </video>
+    <div class="hero-content">
+      <h1>Selamat Datang di Kavling Impian Anda</h1>
+      <p>Nikmati lingkungan asri, tenang, dan nyaman di tepi danau bersama keluarga tercinta.</p>
+      <a href="kavling.html" class="btn">Lihat Kavling</a>
+    </div>
   </header>
 
   <section>
@@ -116,3 +137,4 @@
 
 </body>
 </html>
+
